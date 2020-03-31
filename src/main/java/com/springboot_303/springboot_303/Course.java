@@ -25,6 +25,7 @@ public class Course {
     @NotNull
     @Size(min=10)
     private String description;
+
     @NotNull
     @Size(min=3)
     private int credit;

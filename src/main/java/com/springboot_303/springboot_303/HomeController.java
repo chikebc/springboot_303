@@ -25,13 +25,13 @@ public class HomeController {
     @GetMapping("/add")
     public String jobForm(Model model) {
         model.addAttribute("course", new Course());
-        return "Vform";
+        return "courseForm";
     }
 
     @PostMapping("/process")
     public String processForm(@Valid Course course, BindingResult result) {
         if (result.hasErrors()) {
-            return "courseform";
+            return "courseForm";
         }
         courseRepository.save(course);
         return "redirect:/";
@@ -45,7 +45,7 @@ public class HomeController {
     @RequestMapping("/update/{id}")
     public String updateCourse(@PathVariable("id") long id, Model model) {
         model.addAttribute("course", courseRepository.findById(id).get());
-        return "courseform";
+        return "courseForm";
     }
     @RequestMapping("/delete/{id}")
     public String delCourse(@PathVariable("id") long id) {
