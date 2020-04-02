@@ -14,7 +14,7 @@
         <th>Credits</th>
         <th>Actions</th>
     </tr>
-    <tr th:each="course : ${course}">
+    <tr th:each="course : ${courses}">
         <td th:text="${course.title}"></td>
         <td th:text="${course.instructor}"></td>
         <td th:text="${course.credit}"></td>
@@ -25,9 +25,6 @@
         </td>
     </tr>
 </table>
-<div th:each="job : ${jobs}">
-    <h4 th:inline="text">[[${job.title}]] @ [[${job.employer}]]</h4>
-    <p th:text="${job.description}" ></p>
-</div>
+
 </body>
 </html>

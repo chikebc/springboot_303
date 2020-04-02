@@ -1,11 +1,12 @@
 package com.springboot_303.springboot_303;
-
+//  edited to accomodate 3_04 - Constructor (see page 55)
 import com.sun.istack.NotNull;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -27,7 +28,7 @@ public class Course {
     private String description;
 
     @NotNull
-    @Size(min=3)
+    @Min(3)
     private int credit;
 
     public long getId() {
